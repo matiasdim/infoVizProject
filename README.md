@@ -1,9 +1,8 @@
-# README
+<<<<<<< HEAD
+# infoVizProject
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Visaluzation and comparisons of FIFA 17 players
 
-Things you may want to cover:
 
 * Ruby version
 
@@ -21,4 +20,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+
+
+
