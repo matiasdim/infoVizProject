@@ -1,0 +1,40 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<!--<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div> -->
+<div id="container">
+</div>
+
+<script>
+Highcharts.chart('container', {
+
+    title: {
+        text: "Pace"
+    },
+
+    subtitle: {
+        text: 'Top 10 players'
+    },
+    xAxis: {
+        categories: ['Cristiano Ronaldo (94)', 'Lionel Messi (93)', 'Neymar (92)', 'Luis SuÃ¡rez (92)', 'Robert Lewandowski (90)', 'Gareth Bale (90)', 'Zlatan IbrahimoviÄ‡ (90)', 'JÃ©rÃ´me Boateng (89)', 'Eden Hazard (89)', 'Luka ModriÄ‡ (89)']
+    },
+    yAxis: {
+        title: {
+            text: 'Values'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+    series: [{
+        name: 'Acceleration',
+        data: [91, 92, 93, 88, 79, 93, 69, 74, 93, 77]        
+    }, {
+        name: 'Speed',
+        data: [92, 87, 90, 77, 82, 95, 74, 81, 87, 71]
+    }]
+
+});
+</script>

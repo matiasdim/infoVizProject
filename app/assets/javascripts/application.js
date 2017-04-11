@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require highcharts
 // to get the new features in 2.3.0:
 //= require highcharts/highcharts-more

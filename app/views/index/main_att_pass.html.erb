@@ -1,0 +1,52 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<!--<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div> -->
+<div id="container">
+</div>
+
+<script>
+Highcharts.chart('container', {
+
+    title: {
+        text: "Pass"
+    },
+
+    subtitle: {
+        text: 'Top 10 players'
+    },
+    xAxis: {
+        categories: ['Cristiano Ronaldo (94)', 'Lionel Messi (93)', 'Neymar (92)', 'Luis SuÃ¡rez (92)', 'Robert Lewandowski (90)', 'Gareth Bale (90)', 'Zlatan IbrahimoviÄ‡ (90)', 'JÃ©rÃ´me Boateng (89)', 'Eden Hazard (89)', 'Luka ModriÄ‡ (89)']
+    },
+    yAxis: {
+        title: {
+            text: 'Values'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+    series: [{
+        name: 'Vision',
+        data: [85, 90, 80, 84, 78, 79, 83, 76, 86, 90]        
+    }, {
+        name: 'Crossing',
+        data: [84, 77, 75, 77, 62, 87, 76, 69, 80, 78]
+    }, {
+        name: 'Short Pass',
+        data: [83, 88, 81, 83, 83, 86, 84, 75, 84, 92]
+    }, {
+        name: 'Long pass',
+        data: [77,87,75,64,65,80,76,80,80,83]
+    }, {
+        name: 'Curve',
+        data: [81,89,79,86,77,86,82,56,82,79]
+    }, {
+        name: 'Free Kick Acc',
+        data: [76,90,84,84,76,85,82,31,79,77]
+    }]
+
+});
+</script>
