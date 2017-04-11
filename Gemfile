@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #gem 'amcharts.rb'
 gem "highcharts-rails"
+
+gem 'gon'
