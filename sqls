@@ -1,0 +1,8 @@
+select * from player_attributes where date LIKE '2016%'
+ORDER BY overall_rating DESC 
+LIMIT 10
+
+
+select player.player_name from player where player_fifa_api_id in (
+	select player_fifa_api_id from player_attributes where overall_rating >90 and date like '2015%'
+)
