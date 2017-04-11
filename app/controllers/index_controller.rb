@@ -10,37 +10,46 @@ class IndexController < ApplicationController
   # 1
   def top_ten_avg
     players = get_top_ten_payers
-    player_names = []
-    players.each do |p|
-      player_names << p.split(",")[0]
-    end
-    gon.player_names = player_names
+    gon.player_names = get_player_names(players)
   end
 
   # 2
   def main_att_pace
-
+    players = get_top_ten_payers
+    gon.player_names = get_player_names(players)
+    gon.attributes = get_player_attributes([33, 34], players)
   end
   def main_att_shoot
-
+    players = get_top_ten_payers
+    gon.player_names = get_player_names(players)
+    gon.attributes = get_player_attributes([41, 42, 43, 46, 47], players)
   end
   def main_att_pass
-
+    players = get_top_ten_payers
+    gon.player_names = get_player_names(players)
+    gon.attributes = get_player_attributes([33, 34], players)
   end
   def main_att_dribble
-
+    players = get_top_ten_payers
+    gon.player_names = get_player_names(players)
+    gon.attributes = get_player_attributes([33, 34], players)
   end
   def main_att_defense
-
+    players = get_top_ten_payers
+    gon.player_names = get_player_names(players)
+    gon.attributes = get_player_attributes([33, 34], players)
   end
   def main_att_physic
+    players = get_top_ten_payers
+    gon.player_names = get_player_names(players)
+    gon.attributes = get_player_attributes([33, 34], players)
 
   end
 
   private
 
   def read_csv
-    @csv_text = CSV.read(Rails.root.join('FullData.csv'),{:headers => true, :col_sep => ';', :encoding => 'ISO-8859-1'})
+    @csv_text = CSV.read(Rails.root.join('FullData.csv'),{:headers => true, :col_sep => ';', :encoding => 'UTF-8'})
   end
 
   def get_top_ten_payers # ignoring 3 goalkeepers
@@ -54,4 +63,24 @@ class IndexController < ApplicationController
     return players
   end
 
+  def get_player_names(data)
+    player_names = []
+    data.each do |p|
+      player_names << p.split(",")[0]
+    end
+    return player_names
+  end
+
+  def get_player_attributes(indexes, data)
+    all_values = []
+    indexes.each do |i|
+      current_data = []
+      data.each do |p|
+        current_data << p.split(",")[i].to_i
+      end
+
+      all_values << current_data
+    end
+    return all_values
+  end
 end

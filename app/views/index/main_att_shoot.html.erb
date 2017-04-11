@@ -16,7 +16,7 @@ Highcharts.chart('container', {
         text: 'Top 10 players'
     },
     xAxis: {
-        categories: ['Cristiano Ronaldo (94)', 'Lionel Messi (93)', 'Neymar (92)', 'Luis SuÃ¡rez (92)', 'Robert Lewandowski (90)', 'Gareth Bale (90)', 'Zlatan IbrahimoviÄ‡ (90)', 'JÃ©rÃ´me Boateng (89)', 'Eden Hazard (89)', 'Luka ModriÄ‡ (89)']
+        categories: gon.player_names
     },
     yAxis: {
         title: {
@@ -30,19 +30,19 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Shot Power',
-        data: [92, 85, 78, 87, 86, 91, 93, 79, 79, 73]        
+        data: gon.attributes[0] //[92, 85, 78, 87, 86, 91, 93, 79, 79, 73]        
     }, {
         name: 'Finishing',
-        data: [93, 95, 89, 94, 91, 87, 90, 34, 81, 71]
+        data: gon.attributes[1] //[93, 95, 89, 94, 91, 87, 90, 34, 81, 71]
     }, {
         name: 'Long Shots',
-        data: [90, 88, 77, 86, 82, 90, 88, 58, 82, 82]
+        data: gon.attributes[2] //[90, 88, 77, 86, 82, 90, 88, 58, 82, 82]
     }, {
         name: 'Penalties',
-        data: [85, 74, 81, 85, 81, 76, 91, 46, 86, 80]
+        data: gon.attributes[3] //[85, 74, 81, 85, 81, 76, 91, 46, 86, 80]
     }, {
         name: 'Volleys',
-        data: [88, 85, 83, 88, 86, 76, 93, 53, 79, 74]
+        data: gon.attributes[4] //[88, 85, 83, 88, 86, 76, 93, 53, 79, 74]
     }]
 
 });

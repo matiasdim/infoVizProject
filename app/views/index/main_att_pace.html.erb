@@ -6,8 +6,8 @@
 </div>
 
 <script>
-Highcharts.chart('container', {
 
+Highcharts.chart('container', {
     title: {
         text: "Pace"
     },
@@ -16,7 +16,7 @@ Highcharts.chart('container', {
         text: 'Top 10 players'
     },
     xAxis: {
-        categories: ['Cristiano Ronaldo (94)', 'Lionel Messi (93)', 'Neymar (92)', 'Luis SuÃ¡rez (92)', 'Robert Lewandowski (90)', 'Gareth Bale (90)', 'Zlatan IbrahimoviÄ‡ (90)', 'JÃ©rÃ´me Boateng (89)', 'Eden Hazard (89)', 'Luka ModriÄ‡ (89)']
+        categories: gon.player_names
     },
     yAxis: {
         title: {
@@ -30,10 +30,10 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Acceleration',
-        data: [91, 92, 93, 88, 79, 93, 69, 74, 93, 77]        
+        data: gon.attributes[0]//[91, 92, 93, 88, 79, 93, 69, 74, 93, 77]        
     }, {
         name: 'Speed',
-        data: [92, 87, 90, 77, 82, 95, 74, 81, 87, 71]
+        data: gon.attributes[1]//[92, 87, 90, 77, 82, 95, 74, 81, 87, 71]
     }]
 
 });
