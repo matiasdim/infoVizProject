@@ -43,7 +43,23 @@ class IndexController < ApplicationController
     players = get_top_ten_payers
     gon.player_names = get_player_names(players)
     gon.attributes = get_player_attributes([24, 35, 36, 39], players)
+  end
 
+  #4
+  def overall_vs_dribble
+    players = get_top_twenty_payers
+    gon.player_names = get_player_names(players)
+    gon.overall = get_player_attributes([9], players)
+  end
+  def overall_vs_pace
+    players = get_top_twenty_payers
+    gon.player_names = get_player_names(players)
+    gon.overall = get_player_attributes([9], players)
+  end
+  def overall_vs_defense
+    players = get_top_twenty_payers
+    gon.player_names = get_player_names(players)
+    gon.overall = get_player_attributes([9], players)
   end
 
   private
@@ -59,6 +75,17 @@ class IndexController < ApplicationController
         players << row[0]
       end 
       break if index >= 12 
+    end
+    return players
+  end
+
+  def get_top_twenty_payers # ignoring 3 goalkeepers
+    players = []
+    @csv_text.each_with_index do |row, index|
+      unless (index == 4 || index == 5 || index == 9)
+        players << row[0]
+      end 
+      break if index >= 22 
     end
     return players
   end

@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get '/main_att_dribble' => 'index#main_att_dribble'
   get '/main_att_defense' => 'index#main_att_defense'
   get '/main_att_physic' => 'index#main_att_physic'
+
+  get '/overall_vs_dribble' => 'index#overall_vs_dribble'
+  get '/overall_vs_pace' => 'index#overall_vs_pace'
+  get '/overall_vs_defense' => 'index#overall_vs_defense'
 end

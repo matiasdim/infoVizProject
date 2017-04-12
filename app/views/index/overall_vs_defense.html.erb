@@ -1,0 +1,165 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<!--<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div> -->
+<div id="container">
+</div>
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'scatter',
+        zoomType: 'xy'
+    },
+    title: {
+        text: 'Overall versus Defense of top 20 players'
+    },
+    subtitle: {
+        text: 'Overal vs Defense'
+    },
+    xAxis: {
+        title: {
+            enabled: true,
+            text: 'Defense'
+        },
+        startOnTick: true,
+        endOnTick: true,
+        showLastLabel: true,
+        max: 100
+    },
+    yAxis: {
+        title: {
+            text: 'Overall'
+        },
+        max: 100
+    },
+    legend: {
+        layout: 'horizontal',
+        align: 'left',
+        verticalAlign: 'top',
+        x: 100,
+        y: 70,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+        borderWidth: 1
+    },
+    plotOptions: {
+        scatter: {
+            marker: {
+                radius: 10,
+                states: {
+                    hover: {
+                        enabled: true,
+                        lineColor: 'rgb(100,100,100)'
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x} Defense, {point.y} Overall'
+            }
+        }
+    },
+    series: [{
+        name: gon.player_names[0],
+        color: 'rgba(0, 0, 0, .5)',
+        data: [[33,gon.overall[0][0]]],//92 33
+    },{
+        name: gon.player_names[1],
+        color: 'rgba(255, 0, 0, .5)',
+        data: [[26,gon.overall[0][1]]]//89 26
+    },{
+        name: gon.player_names[2],
+        color: 'rgba(102, 204, 0, .5)',
+        data: [[30,gon.overall[0][2]]]//91 30
+    },{
+        name: gon.player_names[3],
+        color: 'rgba(0, 0, 255, .5)',
+        data: [[42,gon.overall[0][3]]]//82 42
+    },{
+        name: gon.player_names[4],
+        color: 'rgba(255, 0, 239, .5)',
+        data: [[38,gon.overall[0][4]]]//81 38
+    },{
+        name: gon.player_names[5],
+        color: 'rgba(90, 131, 158, .5)',
+        data: [[57,gon.overall[0][5]]] //94 57
+    },{
+        name: gon.player_names[6],
+        color: 'rgba(0, 247, 255, .5)',
+        data: [[31,gon.overall[0][6]]]//72 31
+    },{
+        name: gon.player_names[7],
+        color: 'rgba(11, 105, 64, .5)',
+        data: [[90,gon.overall[0][7]]],//79 90
+        marker: {
+            radius: 6,
+            lineColor: 'red',
+            fillColor: 'red',
+            lineWidth: 1,
+            symbol: 'circle'
+        }
+    },{
+        name: gon.player_names[8],
+        color: 'rgba(96, 118, 6, .5)',
+        data: [[32,gon.overall[0][8]]]//90 32
+    },{
+        name: gon.player_names[9],
+        color: 'rgba(0, 32, 137, .5)',
+        data: [[72,gon.overall[0][9]]]//74 72
+    },{
+        name: gon.player_names[10],
+        color: 'rgba(102, 255, 255, .5)',
+        data: [[24,gon.overall[0][10]]]//72 24
+    },{
+        name: gon.player_names[11],
+        color: 'rgba(161, 140, 57, .5)',
+        data: [[24,gon.overall[0][11]]]//80 24
+    },{
+        name: gon.player_names[12],
+        color: 'rgba(255, 136, 31, .5)',
+        data: [[90,gon.overall[0][12]]]//74 90
+    },{
+        name: gon.player_names[13],
+        color: 'rgba(102, 51, 0, .5)',
+        data: [[87,gon.overall[0][13]]]//78 87
+    },{
+        name: gon.player_names[14],
+        color: 'rgba(105, 61, 61, .5)',
+        data: [[26,gon.overall[0][14]]]//89, 26
+    },{
+        name: gon.player_names[15],
+        color: 'rgba(0, 255, 210, .5)',
+        data: [[72, gon.overall[0][15]]]//77,72
+    },{
+        name: gon.player_names[16],
+        color: 'rgba(62, 114, 72, .5)',
+        data: [[30, gon.overall[0][16]]]//86 30
+    },{
+        name: gon.player_names[17],
+        color: 'rgba(0, 137, 123, .5)',
+        data: [[40, gon.overall[0][17]]]//77 40
+    },{
+        name: gon.player_names[18],
+        color: 'rgba(0, 0, 51, .5)',
+        data: [[40, gon.overall[0][18]]]//90 40
+    },{
+        name: gon.player_names[19],
+        color: 'rgba(223, 83, 83, .5)',
+        data: [[40, gon.overall[0][19]]]//86 40
+    }]
+});
+
+
+
+
+
+</script>
+
