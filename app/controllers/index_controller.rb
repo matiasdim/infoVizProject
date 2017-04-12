@@ -45,6 +45,41 @@ class IndexController < ApplicationController
     gon.attributes = get_player_attributes([24, 35, 36, 39], players)
   end
 
+  #3
+  def defense_rwb
+
+  end
+  def defense_cb
+
+  end
+  def defense_lwb
+
+  end
+  def midfield_cdm
+
+  end
+  def midfield_cm
+
+  end
+  def midfield_lm
+
+  end
+  def midfield_rm
+
+  end
+  def midfield_cam
+
+  end
+  def forward_rw
+
+  end
+  def forward_lwb
+
+  end
+  def forward_st
+
+  end
+
   #4
   def overall_vs_dribble
     players = get_top_twenty_payers
