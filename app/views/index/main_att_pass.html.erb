@@ -30,22 +30,22 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Vision',
-        data: [85, 90, 80, 84, 78, 79, 83, 76, 86, 90]        
+        data: gon.attributes[0] //[85, 90, 80, 84, 78, 79, 83, 76, 86, 90]        
     }, {
         name: 'Crossing',
-        data: [84, 77, 75, 77, 62, 87, 76, 69, 80, 78]
+        data: gon.attributes[1] //[84, 77, 75, 77, 62, 87, 76, 69, 80, 78]
     }, {
         name: 'Short Pass',
-        data: [83, 88, 81, 83, 83, 86, 84, 75, 84, 92]
+        data: gon.attributes[2] //[83, 88, 81, 83, 83, 86, 84, 75, 84, 92]
     }, {
         name: 'Long pass',
-        data: [77,87,75,64,65,80,76,80,80,83]
+        data: gon.attributes[3] //[77,87,75,64,65,80,76,80,80,83]
     }, {
         name: 'Curve',
-        data: [81,89,79,86,77,86,82,56,82,79]
+        data: gon.attributes[4] //[81,89,79,86,77,86,82,56,82,79]
     }, {
         name: 'Free Kick Acc',
-        data: [76,90,84,84,76,85,82,31,79,77]
+        data: gon.attributes[5] //[76,90,84,84,76,85,82,31,79,77]
     }]
 
 });

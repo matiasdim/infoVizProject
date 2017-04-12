@@ -30,16 +30,16 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Aggression',
-        data: [63,48,56,78,80,65,84,82,54,62]        
+        data: gon.attributes[0] //[63,48,56,78,80,65,84,82,54,62]        
     }, {
         name: 'Stamina',
-        data: [92,74,79,89,79,78,75,75,77,83]
+        data: gon.attributes[1] //[92,74,79,89,79,78,75,75,77,83]
     }, {
         name: 'Strenght',
-        data: [80,59,49,76,84,80,93,91,65,58]
+        data: gon.attributes[2] //[80,59,49,76,84,80,93,91,65,58]
     }, {
         name: 'Jumping',
-        data: [95,68,61,69,84,85,72,75,59,67]
+        data: gon.attributes[3] //[95,68,61,69,84,85,72,75,59,67]
     }]
 
 });

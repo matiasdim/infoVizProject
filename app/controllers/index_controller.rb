@@ -27,22 +27,22 @@ class IndexController < ApplicationController
   def main_att_pass
     players = get_top_ten_payers
     gon.player_names = get_player_names(players)
-    gon.attributes = get_player_attributes([33, 34], players)
+    gon.attributes = get_player_attributes([28, 30, 31, 32, 44, 45], players)
   end
   def main_att_dribble
     players = get_top_ten_payers
     gon.player_names = get_player_names(players)
-    gon.attributes = get_player_attributes([33, 34], players)
+    gon.attributes = get_player_attributes([19, 20, 25, 38], players)
   end
   def main_att_defense
     players = get_top_ten_payers
     gon.player_names = get_player_names(players)
-    gon.attributes = get_player_attributes([33, 34], players)
+    gon.attributes = get_player_attributes([21, 22, 23, 27, 40], players)
   end
   def main_att_physic
     players = get_top_ten_payers
     gon.player_names = get_player_names(players)
-    gon.attributes = get_player_attributes([33, 34], players)
+    gon.attributes = get_player_attributes([24, 35, 36, 39], players)
 
   end
 
@@ -78,7 +78,6 @@ class IndexController < ApplicationController
       data.each do |p|
         current_data << p.split(",")[i].to_i
       end
-
       all_values << current_data
     end
     return all_values
