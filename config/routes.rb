@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/midfield_rm' => 'index#midfield_rm'
   get '/midfield_cam' => 'index#midfield_cam'
   get '/forward_rw' => 'index#forward_rw'
-  get '/forward_lwb' => 'index#forward_lwb'
+  get '/forward_lw' => 'index#forward_lw'
   get '/forward_st' => 'index#forward_st'
 
   get '/overall_vs_dribble' => 'index#overall_vs_dribble'

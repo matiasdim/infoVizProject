@@ -1,4 +1,64 @@
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Spider</button>
-  <button type="button" class="btn btn-default">Column</button>
+	<%= link_to 'Spider', defense_rwb_path(type: "spider"), method: :get, class: "btn btn-default" %>
+  	<%= link_to 'Bars', defense_rwb_path(type: "bar"), method: :get, class: "btn btn-default" %>
 </div>
+<script>
+if(gon.spider){
+	
+Highcharts.chart('container', {
+
+    chart: {
+        polar: true,
+        type: 'line'
+    },
+
+    title: {
+        text: 'Budget vs spending',
+        x: -80
+    },
+
+    pane: {
+        size: '80%'
+    },
+
+    xAxis: {
+        categories: ['Sales', 'Marketing', 'Development', 'Customer Support',
+                'Information Technology', 'Administration'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+    },
+
+    legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        y: 70,
+        layout: 'vertical'
+    },
+
+    series: [{
+        name: 'Allocated Budget',
+        data: [43000, 19000, 60000, 35000, 17000, 10000],
+        pointPlacement: 'on'
+    }, {
+        name: 'Actual Spending',
+        data: [50000, 39000, 42000, 31000, 26000, 14000],
+        pointPlacement: 'on'
+    }]
+
+});
+}else{
+	alert("no");
+}
+	
+</script>
