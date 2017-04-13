@@ -1,4 +1,138 @@
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Spider</button>
-  <button type="button" class="btn btn-default">Column</button>
+	<%= link_to 'Spider', defense_lwb_path(type: "spider"), method: :get, class: "btn btn-default" %>
+  	<%= link_to 'Bars', defense_lwb_path(type: "bar"), method: :get, class: "btn btn-default" %>
 </div>
+
+
+
+<div id="container">
+</div>
+<script>
+if(gon.spider){
+	
+
+Highcharts.chart('container', {
+
+    chart: {
+        polar: true,
+        type: 'line'
+    },
+
+    title: {
+        text: 'Top 5 players - LWB',
+        x: -80
+    },
+    subtitle: {
+        text: 'Main attributes',
+        x: -80
+    },
+
+    pane: {
+        size: '100%'
+    },
+
+    xAxis: {
+        categories: ['Pace', 'Shoot', 'Pass', 'Dribble', 'Defense', 'Physic'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:}</b><br/>'
+    },
+
+    legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        y: 70,
+        layout: 'vertical'
+    },
+
+    series: [{
+        name: gon.player_names[0],
+        data: [86,73,81,83,83,73]
+    }, {
+        name: gon.player_names[1],
+        data: [79,69,80,84,82,80],
+        pointPlacement: 'on'
+    }, {
+        name: gon.player_names[2],
+        data: [80,62,77,77,82,79],
+        pointPlacement: 'on'
+    }, {
+        name: gon.player_names[3],
+        data: [87,65,75,81,79,76],
+        pointPlacement: 'on'
+    }, {
+        name: gon.player_names[4],
+        data: [75,75,81,77,80,74],
+        pointPlacement: 'on'
+    }]
+
+});
+
+}else{
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Top 5 players - LWB'
+    },
+    subtitle: {
+        text: 'Main attributes'
+    },
+    xAxis: {
+        categories: ['Pace', 'Shoot', 'Pass', 'Dribble', 'Defense', 'Physic'],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Values'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: gon.player_names[0],
+        data: [86,73,81,83,83,73]
+    }, {
+        name: gon.player_names[1],
+        data: [79,69,80,84,82,80],
+        pointPlacement: 'on'
+    }, {
+        name: gon.player_names[2],
+        data: [80,62,77,77,82,79],
+        pointPlacement: 'on'
+    }, {
+        name: gon.player_names[3],
+        data: [87,65,75,81,79,76],
+        pointPlacement: 'on'
+    }, {
+        name: gon.player_names[4],
+        data: [75,75,81,77,80,74],
+        pointPlacement: 'on'
+    }]
+});
+}
+</script>

@@ -52,39 +52,100 @@ class IndexController < ApplicationController
       gon.spider = true
     else
       # bars
-      puts "bar"
       gon.spider = false
     end
   end
   def defense_cb
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else      
+      # bars
+      gon.spider = false
+    end
   end
   def defense_lwb
-
+    players = get_top_payers(5,["LB"])
+    gon.player_names = get_player_names(players)
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def midfield_cdm
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def midfield_cm
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def midfield_lm
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def midfield_rm
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def midfield_cam
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def forward_rw
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
-  def forward_lwb
-
+  def forward_lw
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
   def forward_st
-
+    if params[:type].blank? || params[:type] == "spider"
+      # spider
+      gon.spider = true
+    else
+      # bars
+      gon.spider = false
+    end
   end
 
   #4
@@ -110,13 +171,25 @@ class IndexController < ApplicationController
     @csv_text = CSV.read(Rails.root.join('FullData.csv'),{:headers => true, :col_sep => ';', :encoding => 'UTF-8'})
   end
 
-  def get_top_payers(num) # ignoring 3 goalkeepers
+  def get_top_payers(num, positions=nil) # ignoring 3 goalkeepers
     players = []
-    @csv_text.each_with_index do |row, index|
-      unless (index == 4 || index == 5 || index == 9)
-        players << row[0]
-      end 
-      break if index >= num 
+    unless positions
+      @csv_text.each_with_index do |row, index|
+        unless (index == 4 || index == 5 || index == 9)
+          players << row[0]
+        end 
+        break if index >= num 
+      end
+    else
+      count = 0
+      @csv_text.each do |row|
+        current_position = row[0].split(",")[5]
+        if positions.include? current_position
+          players << row[0]
+          count += 1
+        end
+        break if count == num
+      end
     end
     return players
   end
