@@ -47,6 +47,8 @@ class IndexController < ApplicationController
 
   #3
   def defense_rwb
+    players = get_top_payers(5,["RB"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -56,6 +58,8 @@ class IndexController < ApplicationController
     end
   end
   def defense_cb
+    players = get_top_payers(5,["CB", "RCB", "LCB"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -76,6 +80,8 @@ class IndexController < ApplicationController
     end
   end
   def midfield_cdm
+    players = get_top_payers(5,["CDM", "LCM", "RCM", "CM"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -85,6 +91,8 @@ class IndexController < ApplicationController
     end
   end
   def midfield_cm
+    players = get_top_payers(5,["CM"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -94,6 +102,8 @@ class IndexController < ApplicationController
     end
   end
   def midfield_lm
+    players = get_top_payers(5,["LM"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -103,6 +113,8 @@ class IndexController < ApplicationController
     end
   end
   def midfield_rm
+    players = get_top_payers(5,["RM"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -112,6 +124,8 @@ class IndexController < ApplicationController
     end
   end
   def midfield_cam
+    players = get_top_payers(5,["CAM"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -121,6 +135,8 @@ class IndexController < ApplicationController
     end
   end
   def forward_rw
+    players = get_top_payers(5,["RW"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -130,6 +146,8 @@ class IndexController < ApplicationController
     end
   end
   def forward_lw
+    players = get_top_payers(5,["LW"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
@@ -139,6 +157,8 @@ class IndexController < ApplicationController
     end
   end
   def forward_st
+    players = get_top_payers(5,["ST"])
+    gon.player_names = get_player_names(players)
     if params[:type].blank? || params[:type] == "spider"
       # spider
       gon.spider = true
